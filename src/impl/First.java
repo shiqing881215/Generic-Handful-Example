@@ -2,15 +2,14 @@ package impl;
 
 import intf.FirstInterface;
 
-
-public class First<T extends First<T, U>, U extends BaseU> extends Base<T> implements FirstInterface<T, U>{
-	protected U u;
-	
-	public void setU(U u) {
-		this.u = u;
-	}
-	
-	protected void printU() {
-		u.printSelf();
-	}
+/**
+ * 
+ * @author shiqing
+ *
+ * @param <U>
+ * @param <T>
+ * 
+ * Follow the same pattern form Base class
+ */
+public class First<U extends First<U, T>, T extends FirstInterface<T>> extends Base<U, T> implements FirstInterface<T> {
 }
